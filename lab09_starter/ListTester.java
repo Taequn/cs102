@@ -66,23 +66,39 @@ public class ListTester{
     
     private static void testConcat(){
         System.out.println("*****    CONCAT TESTS    *****");
-        
-        //come up with test cases of your own!
+        FrontBackList<String> test3 = new FrontBackList<String>();
+        test3.add("cat");
+        test3.add("dog");
+        test3.add("bird");
+
+        FrontBackList<String> test4 = new FrontBackList<String>();
+        test4.add("parrot");
+        test4.add("horse");
+        test4.add("mouse");
+
+        //test3.concat(test4);
+        //System.out.println(test3);
+        //System.out.println(test4);
+        FrontBackList.concat(test3, test4);
+        System.out.println(test3);
+        System.out.println(test4);
+
         
     }
     
     
     
     public static void main(String[] args){
-        
+
+
         //Come up with test cases of your own
         //the provided tests are not sufficient!
         
         
-        //testAdd();         //uncomment me for Part 2.3!     
+        //testAdd();         //uncomment me for Part 2.3!
         //testIndexOf();     //uncomment me for Part 2.5!
         //testRemove();      //uncomment me for Part 2.7!
-        //testConcat();      //uncomment me for Part 2.8!
+        testConcat();      //uncomment me for Part 2.8!
                 
     }
     
