@@ -30,13 +30,14 @@ public class AScrollingGame extends GameCore {
     private static final int STAR_FACTOR=100;
     private static final int STAR_SPEED_UP=20;
     private static final int WIN_COND=250;
-    private static final int LOSE_COND=250;
+    private static final int LOSE_COND=3;
     private static final int DEFAULT_SCORE_ADD=10;
 
     
     // Default row location of player at beginning of the game
     private static final int DEFAULT_PLAYER_ROW = 4;
     private static int countScreen = 1;
+    private static int currentScreenshotCounter = 0;
     private static Location firstHP = new Location(1, 10);
     private static Location firstStar = new Location(1, 1);
     
@@ -273,8 +274,11 @@ public class AScrollingGame extends GameCore {
 
         else if (key == KEY_DEBUG)
             displayGridLines();
-        else if (key == KEY_SCREENSHOT)
-            super.takeScreenShot("screenshot.jpg");
+        else if (key == KEY_SCREENSHOT) {
+            super.takeScreenShot("screenshot"+(++currentScreenshotCounter)+".jpg");
+            if (currentScreenshotCounter==9)
+                currentScreenshotCounter=0;
+        }
 
         //speed controls
         else if (key == KEY_SLOW_DOWN)
@@ -322,9 +326,6 @@ public class AScrollingGame extends GameCore {
             displayStillScreen(DIRECTORY_LOC+END_SCREENS[1]);
             gameOver=true;
         }
-    	
-    	//minimum
-        //updateTitle("GAME OVER ...
     }
     
     
