@@ -29,24 +29,26 @@ public class AScrollingGame extends GameCore {
     
     // Default row location of player at beginning of the game
     private static final int DEFAULT_PLAYER_ROW = 4;
-    
+    private static int countScreen = 1;
+    private static Location firstHP = new Location(1, 10);
+    private static Location firstStar = new Location(1, 1);
     
     public static final int KEY_SCREENSHOT = KeyEvent.VK_S;
-    
-    
+
     private static final String INTRO_SCREEN = "ink.png";
     private static final String END_SCREEN = "gameover.jpg";
-    private static final String BG_SCREEN = "bg_1.png";
-    
-    protected static String PLAYER_IMG = "char.png";    // specify user image file
-    protected static String AVOID_IMG = "avoid_1.png";
-    protected static String GET_IMG = "get_1.png";
+
+    private static final String STAR_IMG = "images/star.png";
+    protected static String PLAYER_IMG = "images/char.png";
+    protected static String AVOID_IMG = "images/avoid_1.png";
+    protected static String GET_IMG = "images/get_1.png";
     protected static String[] getList = {"get_1.png",
             "get_2.png", "get_3.png", "get_4.png"
     };
     protected static String[] avoidList = {"avoid_1.png",
             "avoid_2.png", "avoid_3.png", "avoid_4.png"
     };
+    protected static String[] playerList = {"char.png", "char1.png"};
 
     // ADD others for Avoid/Get items 
     // USE ArrayList when you have many similar items
@@ -101,16 +103,26 @@ public class AScrollingGame extends GameCore {
     
     
      protected void resetGamePlayParam() {
-        displayGameBackground("bg_2.jpg");
+        //displayGameBackground("images/bg1.png");
         //setGameBackgroundColor(Color.BLUE);
         score = 0;
         hits = 0;
         updateTitle("Scrolling Game --- SCORE " + score + " ;hits " + hits);
-        
+
+
         // store and initialize user position
         playerCoord = new Location(DEFAULT_PLAYER_ROW, 0, 1);
-        setGridImage(playerCoord, PLAYER_IMG);
-        
+        setGridImage(playerCoord, "images/"+playerList[0]);
+
+
+        for (int i=0; i<getTotalGridCols()-1; i++){
+            if (i==11 || i==12 || i==13){
+                Location loc = new Location(1, i);
+                setGridImage(loc, "images/HP.png");
+            }
+        }
+
+        //setGridImage(coordinateForHP, "images/HP.png");
         // Try the lines below
         //setGridColor(playerCoord, Color.BLUE);
 
@@ -134,8 +146,7 @@ public class AScrollingGame extends GameCore {
     //Call methods that modify assets at each "render ticks"
     //Some assets move each "render ticks", new ones are created
     protected void performRenderUpdates(){
-        if (isPaused)
-            return;
+        bgScrolling();
         handleKeyPress();
         scroll();
         populate();
@@ -156,7 +167,7 @@ public class AScrollingGame extends GameCore {
     protected void populate() {
         //Making a random decision on what asset to use
 
-        Location newPiece  = new Location(DICE.nextInt(getTotalGridRows()),
+        Location newPiece  = new Location(DICE.nextInt(getTotalGridRows()-2)+2,
                 getTotalGridCols()-1, (DICE.nextInt(2)+2));
 
         //if the location is occupied, then we don't do anything
@@ -172,10 +183,10 @@ public class AScrollingGame extends GameCore {
             Location loc = assets.get(j);
 
             if (loc.getTrait()==2){
-                setGridImage(loc, avoidList[loc.getPosition()]);
+                setGridImage(loc, "images/"+avoidList[loc.getPosition()]);
             }
             else if (loc.getTrait()==3){
-                setGridImage(loc, getList[loc.getPosition()]);
+                setGridImage(loc, "images/"+getList[loc.getPosition()]);
             }
 
         }
@@ -203,10 +214,15 @@ public class AScrollingGame extends GameCore {
         for (int i=0; i<assets.size(); i++){
             Location loc = assets.get(i);
             if (loc.equals(playerCoord)){
-                if (loc.getTrait()==2)
+                if (loc.getTrait()==2){
                     hits++;
-                else if (loc.getTrait()==3)
-                    score+=10;
+                    regulateUI(true);
+                }
+
+                else if (loc.getTrait()==3) {
+                    score += 10;
+                    regulateUI(false);
+                }
                 setGridImage(loc, null);
                 assets.remove(i);
                 setGridImage(playerCoord, PLAYER_IMG);
@@ -215,17 +231,18 @@ public class AScrollingGame extends GameCore {
         }
     }
 
-    //ADD helpers methods as you need them
-    /** TO-DO: ADD DIFFERENT IMAGES FOR MOVING  **/
     protected void movement(Location loc, int r, int c){
         setGridImage(loc, null);
         loc.set(loc.getRow() + r, loc.getCol() + c);
+
         if (loc.getTrait()==1)
-            setGridImage(loc, PLAYER_IMG);
+            setGridImage(loc, "images/"+playerList[0]);
         else if (loc.getTrait()==2)
             setGridImage(loc, AVOID_IMG);
         else if (loc.getTrait()==3)
             setGridImage(loc, GET_IMG);
+        else if (loc.getTrait()==10)
+            setGridImage(loc, "images/"+playerList[1]);
     }
     
     
@@ -251,16 +268,24 @@ public class AScrollingGame extends GameCore {
                 movement(playerCoord, 1, 0);
         }
         else if (key == KEY_MOVE_UP){
-            if (playerCoord.getRow()>0)
+            if (playerCoord.getRow()>2)
                 movement(playerCoord,-1, 0);
         }
         else if (key == KEY_MOVE_LEFT){
-            if (playerCoord.getCol()-1>=0)
-                movement(playerCoord,0, -1);
+            if (playerCoord.getCol()-1>=0) {
+                playerCoord.setTrait(10);
+                movement(playerCoord, 0, -1);
+            }
         }
         else if (key == KEY_MOVE_RIGHT){
-            if (playerCoord.getCol()+1<getTotalGridCols())
+            if (playerCoord.getCol()+1<getTotalGridCols()){
+                playerCoord.setTrait(1);
                 movement(playerCoord, 0, 1);
+            }
+        }
+
+        else if (key == KEY_DEBUG){
+            displayGridLines();
         }
 
         //speed controls
@@ -277,12 +302,34 @@ public class AScrollingGame extends GameCore {
         
         return key;
     }
-    
+
+    protected void bgScrolling(){
+        displayGameBackground("images/bg"+countScreen+".jpg");
+        countScreen++;
+        if (countScreen>20)
+            countScreen=1;
+    }
+
+    //regulates UI and other in-game mechanics
+    protected void regulateUI(boolean damage){
+        if (hits>0 && damage)
+            firstHP.set(1, firstHP.getCol()+1);
+        if (score%100==0 && !damage)
+            firstStar.set(1, firstStar.getCol()+1);
+
+        if (score%20==0 && !damage)
+            super.speedUp(MIN_TIMER_DELAY);
+
+        setGridImage(firstHP,null);
+        setGridImage(firstStar, STAR_IMG);
+
+    }
+
     //contains all of the tasks that need to be done each time a game ends
     protected void endGame(){
-    	if (hits==3 || score==200){
+    	if (hits==3 || score>250){
             updateTitle("GAME OVER");
-            displayStillScreen(END_SCREEN);
+            displayStillScreen("images/"+END_SCREEN);
             gameOver=true;
         }
     	

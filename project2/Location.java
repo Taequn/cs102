@@ -49,6 +49,8 @@ class Location {
 
     public int getTrait() { return trait; }
 
+    public void setTrait(int number){ this.trait = number; }
+
     public int getPosition() { return position; }
 
     public void set(int r, int c) { 
