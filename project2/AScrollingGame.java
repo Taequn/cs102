@@ -36,19 +36,20 @@ public class AScrollingGame extends GameCore {
     public static final int KEY_SCREENSHOT = KeyEvent.VK_S;
 
     private static final String INTRO_SCREEN = "ink.png";
-    private static final String END_SCREEN = "gameover.jpg";
+    private static final String[] END_SCREENS = {"gameover.png",
+        "gameover1.png"};
 
     private static final String STAR_IMG = "images/star.png";
     protected static String PLAYER_IMG = "images/char.png";
     protected static String AVOID_IMG = "images/avoid_1.png";
     protected static String GET_IMG = "images/get_1.png";
-    protected static String[] getList = {"get_1.png",
+    protected static final String[] getList = {"get_1.png",
             "get_2.png", "get_3.png", "get_4.png"
     };
-    protected static String[] avoidList = {"avoid_1.png",
+    protected static final String[] avoidList = {"avoid_1.png",
             "avoid_2.png", "avoid_3.png", "avoid_4.png"
     };
-    protected static String[] playerList = {"char.png", "char1.png"};
+    protected static final String[] playerList = {"char.png", "char1.png"};
 
     // ADD others for Avoid/Get items 
     // USE ArrayList when you have many similar items
@@ -152,17 +153,6 @@ public class AScrollingGame extends GameCore {
         populate();
         endGame();
     }
-    
-    
-    //Update game state with new assets 
-    // such as adding in A/G images in the right-most column
-    // WE GOTTA MAKE THESE METHODS SLOWER
-    /**
-     To-do list:
-     1) Develop certain assets that move faster/slower than others
-     2) Write a separate method for those.
-
-     **/
 
     protected void populate() {
         //Making a random decision on what asset to use
@@ -209,7 +199,6 @@ public class AScrollingGame extends GameCore {
         }
     }
     
-    //Check for collision between user and assets
     protected void handleCollision() {
         for (int i=0; i<assets.size(); i++){
             Location loc = assets.get(i);
@@ -252,11 +241,6 @@ public class AScrollingGame extends GameCore {
     
     //Handle game player key press for game play
 
-    /** TO-DO LIST:
-     1) Check if we can arrange it in an ArrayList/LinkedList
-     using the key numbers. It might make the code shorter
-     and more clean.
-     **/
     protected int handleKeyPress() {
         int key = super.handleKeyPress(); // delegate to parent window level keys
         if (key != GameGrid.NO_KEY) {
@@ -296,17 +280,13 @@ public class AScrollingGame extends GameCore {
         else if (key == KEY_RESET_SPEED)
             super.resetSpeed();
 
-
-
-
         
         return key;
     }
 
     protected void bgScrolling(){
         displayGameBackground("images/bg"+countScreen+".jpg");
-        countScreen++;
-        if (countScreen>20)
+        if (++countScreen>20)
             countScreen=1;
     }
 
@@ -327,9 +307,14 @@ public class AScrollingGame extends GameCore {
 
     //contains all of the tasks that need to be done each time a game ends
     protected void endGame(){
-    	if (hits==3 || score>250){
-            updateTitle("GAME OVER");
-            displayStillScreen("images/"+END_SCREEN);
+    	if (hits==3){
+            updateTitle("YOU LOST! Your score: " + score);
+            displayStillScreen("images/"+END_SCREENS[0]);
+            gameOver=true;
+        }
+    	else if (score>250){
+            updateTitle("YOU WON!");
+            displayStillScreen("images/"+END_SCREENS[1]);
             gameOver=true;
         }
     	

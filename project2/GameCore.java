@@ -223,7 +223,7 @@ public abstract class GameCore {
     	if (key == KEY_QUIT_GAME)
             System.exit(0);
         else if (key == KEY_PAUSE_GAME)
-            isPaused = !isPaused;  
+            isPaused = !isPaused;
         
         else if (key == defaultStillScreenKey)
         	stillScreen = false;

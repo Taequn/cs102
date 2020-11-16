@@ -27,6 +27,7 @@ class Location {
      1 — player
      2 — avoid assets
      3 — catch assets
+     10 — player turning left
       **/
     
     //---------------- Constructors -----------------//
