@@ -21,11 +21,18 @@ public class AScrollingGame extends GameCore {
     protected static final int KEY_MOVE_RIGHT = KeyEvent.VK_RIGHT;
     protected static final int KEY_MOVE_LEFT = KeyEvent.VK_LEFT;
     
-    // ADD more
-    
-    // if needed use the following
-    //   public static final int[] MOVE_KEYS = { KEY_MOVE_DOWN, 
-    //                                         ... };
+    private static final int PLAYER_TRAIT_RIGHT=1;
+    private static final int PLAYER_TRAIT_LEFT=10;
+    private static final int ASSET_TRAIT_BAD=2;
+    private static final int ASSET_TRAIT_GOOD=3;
+    private static final int TOP_BORDER=2;
+    private static final int BG_LIMIT=20;
+    private static final int STAR_FACTOR=100;
+    private static final int STAR_SPEED_UP=20;
+    private static final int WIN_COND=250;
+    private static final int LOSE_COND=250;
+    private static final int DEFAULT_SCORE_ADD=10;
+
     
     // Default row location of player at beginning of the game
     private static final int DEFAULT_PLAYER_ROW = 4;
@@ -39,10 +46,12 @@ public class AScrollingGame extends GameCore {
     private static final String[] END_SCREENS = {"gameover.png",
         "gameover1.png"};
 
-    private static final String STAR_IMG = "images/star.png";
-    protected static String PLAYER_IMG = "images/char.png";
-    protected static String AVOID_IMG = "images/avoid_1.png";
-    protected static String GET_IMG = "images/get_1.png";
+    private static final String DIRECTORY_LOC = "images/";
+    private static final String STAR_IMG = DIRECTORY_LOC+"star.png";
+    protected static String PLAYER_IMG = DIRECTORY_LOC+"char.png";
+    protected static String AVOID_IMG = DIRECTORY_LOC+"avoid_1.png";
+    protected static String GET_IMG = DIRECTORY_LOC+"get_1.png";
+    protected static final String HP_IMG= DIRECTORY_LOC+"HP.png";
     protected static final String[] getList = {"get_1.png",
             "get_2.png", "get_3.png", "get_4.png"
     };
@@ -113,22 +122,16 @@ public class AScrollingGame extends GameCore {
 
         // store and initialize user position
         playerCoord = new Location(DEFAULT_PLAYER_ROW, 0, 1);
-        setGridImage(playerCoord, "images/"+playerList[0]);
+        setGridImage(playerCoord, DIRECTORY_LOC+playerList[0]);
 
-
+        //put hearts into the UI
         for (int i=0; i<getTotalGridCols()-1; i++){
             if (i==11 || i==12 || i==13){
                 Location loc = new Location(1, i);
-                setGridImage(loc, "images/HP.png");
+                setGridImage(loc, HP_IMG);
             }
         }
 
-        //setGridImage(coordinateForHP, "images/HP.png");
-        // Try the lines below
-        //setGridColor(playerCoord, Color.BLUE);
-
-        //debug = true;
-        //hideGameBackground();
         System.out.println("debug mode" + debug + " grid lines shown");
 
     }
@@ -157,7 +160,7 @@ public class AScrollingGame extends GameCore {
     protected void populate() {
         //Making a random decision on what asset to use
 
-        Location newPiece  = new Location(DICE.nextInt(getTotalGridRows()-2)+2,
+        Location newPiece  = new Location(DICE.nextInt(getTotalGridRows()-2)+TOP_BORDER,
                 getTotalGridCols()-1, (DICE.nextInt(2)+2));
 
         //if the location is occupied, then we don't do anything
@@ -172,11 +175,11 @@ public class AScrollingGame extends GameCore {
         for (int j=0; j<assets.size(); j++){
             Location loc = assets.get(j);
 
-            if (loc.getTrait()==2){
-                setGridImage(loc, "images/"+avoidList[loc.getPosition()]);
+            if (loc.getTrait()==ASSET_TRAIT_BAD){
+                setGridImage(loc, DIRECTORY_LOC+avoidList[loc.getPosition()]);
             }
-            else if (loc.getTrait()==3){
-                setGridImage(loc, "images/"+getList[loc.getPosition()]);
+            else if (loc.getTrait()==ASSET_TRAIT_GOOD){
+                setGridImage(loc, DIRECTORY_LOC+getList[loc.getPosition()]);
             }
 
         }
@@ -203,13 +206,13 @@ public class AScrollingGame extends GameCore {
         for (int i=0; i<assets.size(); i++){
             Location loc = assets.get(i);
             if (loc.equals(playerCoord)){
-                if (loc.getTrait()==2){
+                if (loc.getTrait()==ASSET_TRAIT_BAD){
                     hits++;
                     regulateUI(true);
                 }
 
-                else if (loc.getTrait()==3) {
-                    score += 10;
+                else if (loc.getTrait()==ASSET_TRAIT_GOOD) {
+                    score += DEFAULT_SCORE_ADD;
                     regulateUI(false);
                 }
                 setGridImage(loc, null);
@@ -224,14 +227,14 @@ public class AScrollingGame extends GameCore {
         setGridImage(loc, null);
         loc.set(loc.getRow() + r, loc.getCol() + c);
 
-        if (loc.getTrait()==1)
-            setGridImage(loc, "images/"+playerList[0]);
-        else if (loc.getTrait()==2)
+        if (loc.getTrait()==PLAYER_TRAIT_RIGHT)
+            setGridImage(loc, DIRECTORY_LOC+playerList[0]);
+        else if (loc.getTrait()==ASSET_TRAIT_BAD)
             setGridImage(loc, AVOID_IMG);
-        else if (loc.getTrait()==3)
+        else if (loc.getTrait()==ASSET_TRAIT_GOOD)
             setGridImage(loc, GET_IMG);
-        else if (loc.getTrait()==10)
-            setGridImage(loc, "images/"+playerList[1]);
+        else if (loc.getTrait()==PLAYER_TRAIT_LEFT)
+            setGridImage(loc, DIRECTORY_LOC+playerList[1]);
     }
     
     
@@ -252,25 +255,26 @@ public class AScrollingGame extends GameCore {
                 movement(playerCoord, 1, 0);
         }
         else if (key == KEY_MOVE_UP){
-            if (playerCoord.getRow()>2)
+            if (playerCoord.getRow()>TOP_BORDER)
                 movement(playerCoord,-1, 0);
         }
         else if (key == KEY_MOVE_LEFT){
             if (playerCoord.getCol()-1>=0) {
-                playerCoord.setTrait(10);
+                playerCoord.setTrait(PLAYER_TRAIT_LEFT);
                 movement(playerCoord, 0, -1);
             }
         }
         else if (key == KEY_MOVE_RIGHT){
             if (playerCoord.getCol()+1<getTotalGridCols()){
-                playerCoord.setTrait(1);
+                playerCoord.setTrait(PLAYER_TRAIT_RIGHT);
                 movement(playerCoord, 0, 1);
             }
         }
 
-        else if (key == KEY_DEBUG){
+        else if (key == KEY_DEBUG)
             displayGridLines();
-        }
+        else if (key == KEY_SCREENSHOT)
+            super.takeScreenShot("screenshot.jpg");
 
         //speed controls
         else if (key == KEY_SLOW_DOWN)
@@ -284,9 +288,10 @@ public class AScrollingGame extends GameCore {
         return key;
     }
 
+    //method scrolls background and seemlessly loops it
     protected void bgScrolling(){
-        displayGameBackground("images/bg"+countScreen+".jpg");
-        if (++countScreen>20)
+        displayGameBackground(DIRECTORY_LOC+"bg"+countScreen+".jpg");
+        if (++countScreen>BG_LIMIT)
             countScreen=1;
     }
 
@@ -294,10 +299,10 @@ public class AScrollingGame extends GameCore {
     protected void regulateUI(boolean damage){
         if (hits>0 && damage)
             firstHP.set(1, firstHP.getCol()+1);
-        if (score%100==0 && !damage)
+        if (score%STAR_FACTOR==0 && !damage)
             firstStar.set(1, firstStar.getCol()+1);
 
-        if (score%20==0 && !damage)
+        if (score%STAR_SPEED_UP==0 && !damage)
             super.speedUp(MIN_TIMER_DELAY);
 
         setGridImage(firstHP,null);
@@ -307,14 +312,14 @@ public class AScrollingGame extends GameCore {
 
     //contains all of the tasks that need to be done each time a game ends
     protected void endGame(){
-    	if (hits==3){
-            updateTitle("YOU LOST! Your score: " + score);
-            displayStillScreen("images/"+END_SCREENS[0]);
+    	if (hits>=LOSE_COND){
+            updateTitle("YOU LOST! Your score: " + score + ". You had to get: " + WIN_COND);
+            displayStillScreen(DIRECTORY_LOC+END_SCREENS[0]);
             gameOver=true;
         }
-    	else if (score>250){
+    	else if (score>WIN_COND){
             updateTitle("YOU WON!");
-            displayStillScreen("images/"+END_SCREENS[1]);
+            displayStillScreen(DIRECTORY_LOC+END_SCREENS[1]);
             gameOver=true;
         }
     	

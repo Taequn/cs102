@@ -8,7 +8,7 @@ class Location {
     private int row;
     private int col;
     private int trait;
-    private int position = dice.nextInt(4);
+    private final int ARRAY_POSITION = dice.nextInt(4);
 
     /**
      Changes:
@@ -52,7 +52,7 @@ class Location {
 
     public void setTrait(int number){ this.trait = number; }
 
-    public int getPosition() { return position; }
+    public int getPosition() { return ARRAY_POSITION; }
 
     public void set(int r, int c) { 
        row = r;
