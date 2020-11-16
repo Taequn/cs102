@@ -80,19 +80,23 @@ public class FrontBackList<E> {
             this.back=addNew;
         }
 
-        else if (this.size==1 || index==size){
+        else if (index==size && size>0){
             Node<E> addNew = new Node<E>(toAdd);
             getNode(index-1).next=addNew;
             this.back=addNew;
         }
 
+        else if (index==0 && size>0){
+            Node<E> addNew = new Node<E>(toAdd);
+            addNew.next=this.front;
+            this.front = addNew;
+        }
+
         else{
-            Node<E> addNew = new Node<E>(toAdd, getNode(index+1));
+            Node<E> addNew = new Node<E>(toAdd, getNode(index));
             getNode(index-1).next=addNew;
         }
         size++;
-
-
     }
     
        
@@ -121,7 +125,7 @@ public class FrontBackList<E> {
             this.front=getNode(1);
         }
 
-        else if (idx==this.size){
+        else if (idx==this.size-1 && size>1){
             this.back=getNode(this.size-1);
         }
 
@@ -143,28 +147,22 @@ public class FrontBackList<E> {
         }
         return false; //placeholder
     }
-    
-    /*
-    public void concat(FrontBackList<E> sL){
-        this.getNode(this.getSize()-1).next=sL.getNode(0);
-        this.back=sL.getNode(sL.getSize()-1);
-        size+=sL.getSize();
 
-        sL.back=null;
-        sL.front=null;
-        sL.size=0;
-
-    }
-     */
     public void concat(FrontBackList<E> sL){
         concat(this, sL);
     }
 
     public static <E> void concat(FrontBackList<E> fL, FrontBackList<E> sL){
-        fL.getNode(fL.getSize()-1).next=sL.getNode(0);
-        fL.back=sL.getNode(sL.getSize()-1);
-        fL.size+=sL.getSize();
-
+        if (fL.getSize()==0){
+            fL.front=sL.front;
+            fL.back=sL.back;
+            fL.size=sL.size;
+        }
+        else {
+            fL.back.next = sL.front;
+            fL.back = sL.back;
+            fL.size += sL.getSize();
+        }
         sL.back=null;
         sL.front=null;
         sL.size=0;
