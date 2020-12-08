@@ -77,11 +77,23 @@ public class MovieGraph {
 
 
      public ArrayList<String> findShortestPath(String target1, String target2) {
+          if (!foundationMap.containsKey(target1) ||
+                  !foundationMap.containsKey(target2)){
+               System.out.println("Movies Search error; can't find the input in the database");
+               System.exit(1);
+          }
+
+          if (target1.equals(target2)) {
+               System.out.println("That's the same input! What's the point in searching?");
+               System.exit(1);
+          }
+
           Queue<String> queue = new LinkedList<>();
           Set<String> visited = new HashSet<>();
           ArrayList<String> shortestPath = new ArrayList<>();
 
           queue.add(target1);
+
 
           while(!queue.isEmpty()){
                String path = queue.poll();

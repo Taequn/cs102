@@ -96,8 +96,8 @@ public class MovieSearch
           }
            */
 
-          MovieGraph mg = createMovieGraph("cast.txt");
-          displayPath("2001 Yonggary (1999)", "Temporale Rosy (1980)", mg);
+          MovieGraph mg = createMovieGraph("cast.mpaa.txt");
+          displayPath("Cirque du Soleil: Journey of Man (2000)", "Chaplin Jr., Charles", mg);
           //promptUser(mg);
           //System.out.println("Thanks for playing!");
      }
