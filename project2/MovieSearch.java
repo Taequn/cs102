@@ -89,14 +89,17 @@ public class MovieSearch
       */
      public static void main (String[] args) {
           //retrieves Dataset file from command-line argument
+          /*
           if (args == null || args.length < 1) {
                System.out.println("Movies Search: error; no database file provided");
                System.exit(1);
           }
+           */
 
-          MovieGraph mg = createMovieGraph(args[0]);
-          promptUser(mg);
-          System.out.println("Thanks for playing!");
+          MovieGraph mg = createMovieGraph("cast.mpaa.txt");
+          displayPath("Cirque du Soleil: Journey of Man (2000)", "Chaplin Jr., Charles", mg);
+          //promptUser(mg);
+          //System.out.println("Thanks for playing!");
      }
 
 

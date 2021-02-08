@@ -1,13 +1,34 @@
 import java.util.Arrays;
+/**
 
+ ___     _
+ | _ \   | |     ___    __ _     ___     ___
+ |  _/   | |    / -_)  / _` |   (_-<    / -_)
+ _|_|_   _|_|_   \___|  \__,_|   /__/_   \___|
+ _| """ |_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
+ "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
+ ___      _
+ / __|    (_)    __ __    ___
+ | (_ |    | |    \ V /   / -_)
+ \___|   _|_|_   _\_/_   \___|
+ _|"""""|_|"""""|_|"""""|_|"""""|
+ "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
+ _       __      __
+ / |     /  \    /  \
+ | |    | () |  | () |
+ _|_|_   _\__/   _\__/
+ _|"""""|_|"""""|_|"""""|
+ "`-0-0-'"`-0-0-'"`-0-0-'
+
+*/
 public class GameLauncher{
     
     //Our enumerated type!
     public enum PlayerType{Human, AIBasic, AILearning, AILearningDemo};
     
     //Controls what type of player for Players 1 and 2
-    private static PlayerType Player1Type = PlayerType.Human;
-    private static PlayerType Player2Type = PlayerType.AIBasic;
+    private static PlayerType Player1Type = PlayerType.AIBasic;
+    private static PlayerType Player2Type = PlayerType.AILearning;
 
     //accepted inputs when asking users to play again
     private static final String PLAY_AGAIN_YES = "y";
@@ -22,7 +43,7 @@ public class GameLauncher{
             case AIBasic:
                 return new BasicAI();  
             case AILearning:
-            //    return new LearningAI();   //To be implemented by students!
+                return new LearningAI();
             case AILearningDemo:
                 return new LearningAIDemo();
             default:

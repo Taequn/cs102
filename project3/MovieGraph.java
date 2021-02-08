@@ -16,63 +16,37 @@ import java.util.*;
 public class MovieGraph {
      protected Map<String, Set<String>> foundationMap = new HashMap<>();
 
-     //Constructor
-     //Gets passed all of the data from the read in file
-     //in the form of a Set of String arrays.
-     //Each string array represents one line of the source data
-     //split on the forward slashes '/'.
-     public MovieGraph(Set<String[]> data)
-     {
-          //Iterator<String[]> it = data.iterator();
-          //while(it.hasNext()) {
-               //System.out.println(Arrays.toString(it.next()));
-          //     System.out.println(it.next()[0]);
-          //}
+     //Helper function, so there would be no MAGIC NUMBERS and MAGIC LOOPS
+     public void creatingGraph(Set<String> movies, String[] currentLine){
+          for (int i=1; i<currentLine.length; i++) {
+               String actorName = currentLine[i];
+               String currentMovie = currentLine[0];
 
+               movies.add(actorName);
 
+               if (!foundationMap.containsKey(actorName)){
+                    Set<String> aMovie = new HashSet<>();
+                    aMovie.add(currentMovie);
+                    foundationMap.put(actorName, aMovie);
+               }
+               else {
+                    Set<String> tempMovies = new HashSet<>(foundationMap.get(actorName));
+                    tempMovies.add(currentMovie);
+                    foundationMap.put(actorName, tempMovies);
+               }
+          }
+     }
 
+     public MovieGraph(Set<String[]> data) {
           Iterator<String[]> iter = data.iterator();
           while(iter.hasNext()) {
                Set<String> movies = new HashSet<>();
                String[] currentLine = iter.next();
 
-               for (int i=1; i<currentLine.length; i++) {
-                    String actorName = currentLine[i];
-                    String currentMovie = currentLine[0];
-
-                    movies.add(actorName);
-
-                    if (!foundationMap.containsKey(actorName)){
-                         Set<String> aMovie = new HashSet<>();
-                         aMovie.add(currentMovie);
-                         foundationMap.put(actorName, aMovie);
-                    }
-                    else {
-                         Set<String> tempMovies = new HashSet<>(foundationMap.get(actorName));
-                         tempMovies.add(currentMovie);
-                         foundationMap.put(actorName, tempMovies);
-                    }
-               }
+               creatingGraph(movies, currentLine);
 
                foundationMap.put(currentLine[0], movies);
           }
-          //debug code, remove once you have completed your implementation!
-          System.out.println("Read in " + data.size() + " rows of data!");
-          //How will you iterate over this data?
-          //Check the Java API!
-
-     }
-
-
-     //Returns an ArrayList of Strings which is the shortest path of movies/actors between
-     //target1 and target2.
-     public List<String> getUnvisitedNeighbors(Set<String> neighbors){
-          List<String> answer = new ArrayList<>();
-          Iterator<String> iter = neighbors.iterator();
-          while(iter.hasNext())
-               answer.add(iter.next());
-
-          return answer;
      }
 
 
@@ -92,8 +66,9 @@ public class MovieGraph {
           Set<String> visited = new HashSet<>();
           ArrayList<String> shortestPath = new ArrayList<>();
 
-          queue.add(target1);
 
+          queue.add(target1);
+          // Use dictionary to track the path for 100. c:
 
           while(!queue.isEmpty()){
                String path = queue.poll();
@@ -112,10 +87,8 @@ public class MovieGraph {
                          }
                     }
                }
-
-
           }
-          return null;  //placeholder
+          return shortestPath;
      }
 
 

@@ -20,12 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60ede5c-88fa-45d6-b08e-a037ba7eebbb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lab09_starter/FrontBackList$Node.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab09_starter/FrontBackList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab09_starter/ListTester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L01/ArraySet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L01/ArraySet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L01/Lab01Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L01/Lab01Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L11_starter/BasicAI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L11_starter/GameLauncher$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L11_starter/GameLauncher$PlayerType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L11_starter/GameLauncher.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L11_starter/Human.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L11_starter/LearningAI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L11_starter/Matchsticks.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L11_starter/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00_Cherniakov.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/MovieSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project3/KCherniakov_Project3.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project3/README.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab09_starter/FrontBackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab09_starter/FrontBackList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab09_starter/ListTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab09_starter/ListTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L11_starter/GameLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/L11_starter/GameLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L11_starter/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/L11_starter/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project3/MovieGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/project3/MovieGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project3/MovieGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/project3/MovieGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project3/MovieSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/project3/MovieSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project3/MovieSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/project3/MovieSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +71,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="SvnConfiguration">
@@ -63,7 +86,24 @@
       <option name="presentableId" value="Default" />
       <updated>1605116213547</updated>
       <workItem from="1605116216534" duration="13000" />
-      <workItem from="1605116909830" duration="6591000" />
+      <workItem from="1605116909830" duration="6743000" />
+      <workItem from="1605478587667" duration="11312000" />
+      <workItem from="1605498296241" duration="1116000" />
+      <workItem from="1605499648768" duration="22000" />
+      <workItem from="1605535866489" duration="4434000" />
+      <workItem from="1605657777713" duration="1997000" />
+      <workItem from="1606682658594" duration="3616000" />
+      <workItem from="1606854890593" duration="7817000" />
+      <workItem from="1607350081971" duration="574000" />
+      <workItem from="1607370957176" duration="840000" />
+      <workItem from="1607371922455" duration="7527000" />
+      <workItem from="1607389756245" duration="1271000" />
+      <workItem from="1607444680654" duration="2243000" />
+      <workItem from="1607480460611" duration="6227000" />
+      <workItem from="1608144577767" duration="4288000" />
+      <workItem from="1612223810417" duration="3634000" />
+      <workItem from="1612368270607" duration="4910000" />
+      <workItem from="1612813166449" duration="3239000" />
     </task>
     <servers />
   </component>
@@ -80,8 +120,22 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="128" y="23" key="SettingsEditor" timestamp="1606684918418">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="128" y="23" key="SettingsEditor/0.23.1280.709@0.23.1280.709" timestamp="1606684918418" />
+    <state x="343" y="65" width="754" height="181" key="search.everywhere.popup" timestamp="1612813537535">
+      <screen x="0" y="23" width="1440" height="809" />
+    </state>
+    <state x="305" y="60" width="670" height="158" key="search.everywhere.popup/0.23.1280.709@0.23.1280.709" timestamp="1607485411429" />
+    <state x="305" y="60" width="670" height="158" key="search.everywhere.popup/0.23.1280.710@0.23.1280.710" timestamp="1607372728616" />
+    <state x="305" y="60" width="670" height="58" key="search.everywhere.popup/0.23.1280.713@0.23.1280.713" timestamp="1605498044837" />
+    <state x="343" y="65" width="754" height="181" key="search.everywhere.popup/0.23.1440.809@0.23.1440.809" timestamp="1612813537535" />
   </component>
 </project>
