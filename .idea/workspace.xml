@@ -20,33 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60ede5c-88fa-45d6-b08e-a037ba7eebbb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/L01/ArraySet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L01/ArraySet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L01/Lab01Tester.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L01/Lab01Tester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L11_starter/BasicAI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L11_starter/GameLauncher$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L11_starter/GameLauncher$PlayerType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L11_starter/GameLauncher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L11_starter/Human.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L11_starter/LearningAI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L11_starter/Matchsticks.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L11_starter/Player.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00Tester.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00Tester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab00-provided/Lab00_Cherniakov.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project2/MovieSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project3/KCherniakov_Project3.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project3/README.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L11_starter/GameLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/L11_starter/GameLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L11_starter/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/L11_starter/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project3/MovieGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/project3/MovieGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project3/MovieGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/project3/MovieGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project3/MovieSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/project3/MovieSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project3/MovieSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/project3/MovieSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01/ArraySet.class" beforeDir="false" afterPath="$PROJECT_DIR$/L01/ArraySet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01/ArraySet.java" beforeDir="false" afterPath="$PROJECT_DIR$/L01/ArraySet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01/Lab01Tester.class" beforeDir="false" afterPath="$PROJECT_DIR$/L01/Lab01Tester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L01/Lab01Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/L01/Lab01Tester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +81,7 @@
       <workItem from="1608144577767" duration="4288000" />
       <workItem from="1612223810417" duration="3634000" />
       <workItem from="1612368270607" duration="4910000" />
-      <workItem from="1612813166449" duration="3239000" />
+      <workItem from="1612813166449" duration="5436000" />
     </task>
     <servers />
   </component>

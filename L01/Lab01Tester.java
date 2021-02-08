@@ -12,35 +12,185 @@ public class Lab01Tester {
 
   
   public static void main(String[] args) {
-    
-    //initialize and print a set of {a, b, c}
-    String[] s1Init =  {"a", "b", "c"};
-    String[] s2Init =  {"a", "b", "e"};
+    /**
+    //INIT test
+    */
 
-    ArraySet s1 = new ArraySet(s1Init);
-    ArraySet s2 = new ArraySet(s2Init);
+    //String[] array1 = {"a", "b", "c"};
+    //String[] array1 = {"a", null, "c"};
+    //String[] array1 = {};
+    //String[] array1 = {null};
+    //String[] array1 = null;
+    //String[] array1 = {"a"};
 
-    //System.out.println("Contents of s1 = " + s1);
-    //System.out.println("Cardinality = " + s1.cardinality() + ", capacity = " + s1.capacity());
+    //ArraySet AStest1 = new ArraySet(array1);
+    //ArraySet AStest1 = new ArraySet();
+    /*
+    System.out.println(AStest1);
+     */
 
+    /**
+    //CONTAINS test
+     */
+    //String[] array1 = {"a", "b", "c"};
+    //ArraySet AStest1 = new ArraySet(array1);
+    //System.out.println(AStest1.contains("a"));
 
-    //attempting to add additional elements
-    //System.out.println("Attempting to add \"d\", successful? = " + s1.insert("d"));
-    //System.out.println("Attempting to add \"b\", successful? = " + s1.insert("b"));
-    //System.out.println("Contents of s1 = " + s1);
+    //String[] array1 = {"a", "b", "c"};
+    //ArraySet AStest1 = new ArraySet(array1);
+    //System.out.println(AStest1.contains("d"));
 
-    //lookups
-    //System.out.println("Does \"a\" exist in my set?: " + s1.contains("a"));
-    //System.out.println("Does \"q\" exist in my set?: " + s1.contains("q"));
+    //String[] array1 = {"a", null, "c"};
+    //ArraySet AStest1 = new ArraySet(array1);
+    //System.out.println(AStest1.contains(null));
 
-    //remove
-    //System.out.println("Attempting to remove \"b\", successful? = " + s1.remove("b"));
-    //System.out.println("Contents of s1 = " + s1);
+    //ArraySet AStest1 = new ArraySet(array1);
+    //System.out.println(AStest1.contains("a"));
 
-    ArraySet s3 = ArraySet.difference(s1, s2);
-    //System.out.println("Cardinality = " + s1.cardinality() + ", capacity = " + s1.capacity());
-    System.out.println("Contents of s3 = " + s3);
-    System.out.println("Cardinality = " + s3.cardinality() + ", capacity = " + s3.capacity());
+    /**
+    //INSERT test
+     */
+
+    /*
+    String[] array1 = {"a", "b", "c"};
+    ArraySet AStest1 = new ArraySet(array1);
+    //repeated value
+    AStest1.insert("a");
+    System.out.println(AStest1);
+    System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+
+    //resizing with extra capacity
+    AStest1.insert("d");
+    System.out.println(AStest1);
+    System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+
+    //null entry
+    AStest1.insert(null);
+    System.out.println(AStest1);
+    System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+     */
+
+    /**
+     REMOVING tests
+     */
+    //String[] array1 = {"a", "b", "c", "d"};
+    //ArraySet AStest1 = new ArraySet(array1);
+    //System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+
+    //removing from beginning
+    //AStest1.remove("a");
+    //System.out.println(AStest1);
+    //System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+
+    //removing from the end
+    //AStest1.remove("d");
+    //System.out.println(AStest1);
+    //System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+
+    //removing null
+    //AStest1.remove(null);
+    //System.out.println(AStest1);
+    //System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+
+    //resizing
+    //AStest1.remove("d");
+    //AStest1.remove("b");
+    //System.out.println(AStest1);
+    //System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+
+    //removing a value that's not in the set
+    //AStest1.remove("z");
+    //System.out.println(AStest1);
+    //System.out.println(AStest1.cardinality()+"/"+AStest1.capacity());
+
+    /**
+    UNION tests
+     */
+
+    //Regular union
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = {"e", "f", "g"};
+
+    //s1 empty union
+    //String[] array1 = {};
+    //String[] array2 = {"e", "f", "g"};
+
+    //s2 empty union
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = {};
+
+    //s1 is null
+    //String[] array1 = null;
+    //String[] array2 = {"e", "f", "g"};
+
+    //s2 is null
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = null;
+
+    //both empty
+    //String[] array1 = {};
+    //String[] array2 = {};
+
+    /*
+    ArraySet AStest1 = new ArraySet(array1);
+    ArraySet AStest2 = new ArraySet(array2);
+    ArraySet unionTest = ArraySet.union(AStest1, AStest2);
+    System.out.println(unionTest);
+     */
+
+    /**
+    INTERSECTION tests
+     */
+
+    //no int
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = {"e", "f", "g"};
+
+    //regular intersection
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = {"a", "b", "g"};
+
+    //with nulls
+    //String[] array1 = {"a", "b", "c", null};
+    //String[] array2 = {"a", "b", "g", null};
+
+    //empty set
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = {};
+
+    /*
+    ArraySet AStest1 = new ArraySet(array1);
+    ArraySet AStest2 = new ArraySet(array2);
+    ArraySet intTest = ArraySet.intersection(AStest1, AStest2);
+    System.out.println(intTest);
+     */
+
+    /**
+    DIFFERENCE tests
+     */
+
+    //no repition
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = {"e", "f", "g"};
+
+    //1 repition
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = {"e", "f", "d"};
+
+    //same sets
+    //String[] array1 = {"a", "b", "c", "d"};
+    //String[] array2 = {"a", "b", "c", "d"};
+
+    //s1 is empty
+    //String[] array1 = {};
+    //String[] array2 = {"a", "b", "c", "d"};
+
+    /*
+    ArraySet AStest1 = new ArraySet(array1);
+    ArraySet AStest2 = new ArraySet(array2);
+    ArraySet difTest = ArraySet.difference(AStest1, AStest2);
+    System.out.println(difTest);
+     */
 
   }
 

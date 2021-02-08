@@ -30,9 +30,10 @@ public class ArraySet {
     public ArraySet(String[] elementsToAdd) {
         elements = new String[MIN_CAPACITY];
         cardinality = 0;
-        for (String element:elementsToAdd){
-            insert(element);
-        }
+        if(elementsToAdd!=null)
+            for (String element:elementsToAdd)
+                insert(element);
+
     }
     
     /**
