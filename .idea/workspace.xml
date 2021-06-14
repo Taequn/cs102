@@ -20,19 +20,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a60ede5c-88fa-45d6-b08e-a037ba7eebbb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/L04/CNFProposition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/CNFProposition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Clause.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Clause.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Lab04Tester.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Lab04Tester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Literal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Literal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Model.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Variable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/L04/Variable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/Lab05Tester$TimeOutException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/Lab05Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/Lab05Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/PropositionGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/PropositionGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/CNFProposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/CNFProposition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Clause.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Clause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Lab05Tester$TimeOutException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Lab05Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Lab05Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Literal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Literal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Model.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/PropositionGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/PropositionGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Variable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L04/provided/Variable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/CNFProposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/CNFProposition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Clause.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Clause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/L05.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Lab05Tester$TimeOutException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Lab05Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Lab05Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Literal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Literal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Model.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/PropositionGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/PropositionGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Variable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L05/Variable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/BinOp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/BinOp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/Build.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/Build.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/Lab06Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/Lab06Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/Neg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/Neg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/PropVariable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/PropVariable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/Proposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/Proposition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/TRUE/BinOp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/TRUE/Build.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/TRUE/Lab06Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/TRUE/Neg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/TRUE/PropVariable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/TRUE/Proposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L06/_notes/dwsync.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/BinOp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/BinOp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/Build.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/Build.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/Lab07Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/Lab07Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/Neg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/Neg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/PropVariable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/PropVariable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/Proposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L07/Proposition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/BloomFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/BloomFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/Lab09Tester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/Lab09Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/SimpleHash.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/SimpleHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/SmartHash.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/SmartHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/StringHash.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/L09/StringHash.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L04/CNFProposition.class" beforeDir="false" afterPath="$PROJECT_DIR$/L04/CNFProposition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L04/CNFProposition.java" beforeDir="false" afterPath="$PROJECT_DIR$/L04/CNFProposition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L04/Lab04Tester.class" beforeDir="false" afterPath="$PROJECT_DIR$/L04/Lab04Tester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L04/Lab04Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/L04/Lab04Tester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +166,16 @@
       <workItem from="1614093329719" duration="1118000" />
       <workItem from="1614639330432" duration="6537000" />
       <workItem from="1614657841536" duration="4963000" />
+      <workItem from="1614786523743" duration="133000" />
+      <workItem from="1616263718005" duration="13790000" />
+      <workItem from="1616280022117" duration="209000" />
+      <workItem from="1616884386653" duration="5708000" />
+      <workItem from="1616891758106" duration="6422000" />
+      <workItem from="1616901510424" duration="201000" />
+      <workItem from="1616903819503" duration="31000" />
+      <workItem from="1617725669741" duration="2018000" />
+      <workItem from="1619110022264" duration="3142000" />
+      <workItem from="1619241791880" duration="283000" />
     </task>
     <servers />
   </component>
@@ -119,15 +198,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="128" y="23" key="SettingsEditor" timestamp="1606684918418">
-      <screen x="0" y="23" width="1280" height="709" />
+    <state x="400" y="73" width="880" height="215" key="search.everywhere.popup" timestamp="1616896408828">
+      <screen x="0" y="23" width="1680" height="958" />
     </state>
-    <state x="128" y="23" key="SettingsEditor/0.23.1280.709@0.23.1280.709" timestamp="1606684918418" />
-    <state x="343" y="65" width="754" height="181" key="search.everywhere.popup" timestamp="1614661622549">
-      <screen x="0" y="23" width="1440" height="809" />
-    </state>
-    <state x="305" y="60" width="670" height="158" key="search.everywhere.popup/0.23.1280.709@0.23.1280.709" timestamp="1607485411429" />
-    <state x="305" y="60" width="670" height="158" key="search.everywhere.popup/0.23.1280.710@0.23.1280.710" timestamp="1607372728616" />
+    <state x="343" y="65" width="754" height="181" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1616277368794" />
     <state x="343" y="65" width="754" height="181" key="search.everywhere.popup/0.23.1440.809@0.23.1440.809" timestamp="1614661622549" />
+    <state x="400" y="73" width="880" height="215" key="search.everywhere.popup/0.23.1680.958@0.23.1680.958" timestamp="1616896408828" />
   </component>
 </project>
